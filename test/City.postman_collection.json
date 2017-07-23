@@ -1,0 +1,222 @@
+{
+	"variables": [],
+	"info": {
+		"name": "City",
+		"_postman_id": "7351d675-5a28-885c-081d-a16dc9380b12",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/api/cities/1/pointsofinterest",
+			"request": {
+				"url": "http://localhost:5000/api/cities/1/pointsofinterest",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"name": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Name\": \"Broadway\",\n\t\"Description\": \"Broadway theatre, commonly known as Broadway, refers to the theatrical performances presented in the 41 professional theatres with 500 or more seats located in the Theater District and Lincoln Center.\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+			"request": {
+				"url": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/1/pointsofinterest/4",
+			"request": {
+				"url": "http://localhost:5000/api/cities/1/pointsofinterest/4",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/1/pointsofinterest",
+			"request": {
+				"url": "http://localhost:5000/api/cities/1/pointsofinterest",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/4/pointsofinterest",
+			"request": {
+				"url": "http://localhost:5000/api/cities/4/pointsofinterest",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities",
+			"request": {
+				"url": "http://localhost:5000/api/cities",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/1",
+			"request": {
+				"url": "http://localhost:5000/api/cities/1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/4",
+			"request": {
+				"url": "http://localhost:5000/api/cities/4",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+			"request": {
+				"url": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Name\": \"put request without Other field such as Description\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+			"request": {
+				"url": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Name\": \"put request without Description\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+			"request": {
+				"url": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Name\": \"Put request\",\n\t\"Description\": \"This is a put request\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+			"request": {
+				"url": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n      \"op\": \"replace\",\n      \"path\": \"/Name\",\n      \"value\": \"Patch request\"\n    },{\n      \"op\": \"replace\",\n      \"path\": \"/Description\",\n      \"value\": \"Patch request for description\"\n    }\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+			"request": {
+				"url": "http://localhost:5000/api/cities/1/pointsofinterest/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
