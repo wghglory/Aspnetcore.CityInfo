@@ -21,6 +21,30 @@ namespace Aspnetcore.CityInfo.Api.Entities
 }
 ```
 
-## Api testing
+## 2 Code-First Seed Ways
+
+1. AppDbContextExtensions.cs
+1. DbInitializer.cs
+
+## Caveat
+
+In startup.cs `ConfigureServices`, add below to avoid **self referencing issue**:
+
+```csharp
+services.AddMvc().AddJsonOptions(
+    options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
+```
+
+## Api Testing
 
 import test/City.postman.json to postman and run test.
+
+## NLog
+
+.Net Core default supports log information in output window. If you want to log everything in file, install `NLog.Extensions.Logging`.
+
+## Further Optimization
+
+1. Create ViewModels for read, update, delete instead of exposing entity directly when calling api (safer, lightweight)
+1. Use AutoMapper to convert between ViewModels and Entities
