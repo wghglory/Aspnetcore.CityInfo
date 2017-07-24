@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Aspnetcore.CityInfo.Api.Entities;
 
 namespace Aspnetcore.CityInfo.Api.ViewModels
 {
@@ -8,7 +9,5 @@ namespace Aspnetcore.CityInfo.Api.ViewModels
         public string Name { get; set; }
         public string Description { get; set; }
         public ICollection<PointOfInterestViewModel> PointsOfInterest { get; set; }
-        
-        public int NumberOfPointsOfInterest => PointsOfInterest.Count;
     }
 }

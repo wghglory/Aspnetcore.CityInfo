@@ -17,7 +17,7 @@ namespace Aspnetcore.CityInfo.Api.Entities
         public string Description { get; set; }
 
         [ForeignKey("CityId")]
-        public City City { get; set; }
+        public virtual City City { get; set; }
         public int CityId { get; set; }
     }
 }

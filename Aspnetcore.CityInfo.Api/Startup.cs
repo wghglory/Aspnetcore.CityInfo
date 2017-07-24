@@ -2,11 +2,11 @@
 using Aspnetcore.CityInfo.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 using NLog.Extensions.Logging;
 
 namespace Aspnetcore.CityInfo.Api
@@ -28,16 +28,13 @@ namespace Aspnetcore.CityInfo.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddMvcOptions(o => o.OutputFormatters.Add(
-                new XmlDataContractSerializerOutputFormatter()));
-            //.AddJsonOptions(o => {
-            //    if (o.SerializerSettings.ContractResolver != null)
-            //    {
-            //        var castedResolver = o.SerializerSettings.ContractResolver
-            //            as DefaultContractResolver;
-            //        castedResolver.NamingStrategy = null;
-            //    }
-            //});
+//            services.AddMvc().AddMvcOptions(o => o.OutputFormatters.Add(
+//                new XmlDataContractSerializerOutputFormatter()));
+
+            services.AddMvc().AddJsonOptions(
+                options => options.SerializerSettings.ReferenceLoopHandling =
+                    Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
 #if DEBUG
             services.AddTransient<IMailService, LocalMailService>(serviceProvider =>
@@ -56,6 +53,8 @@ namespace Aspnetcore.CityInfo.Api
 #endif
             services.AddDbContext<AppDbContext>(
                 o => o.UseMySql(Configuration.GetConnectionString("MysqlConnection")));
+
+            services.AddScoped<ICityInfoRepository, CityInfoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,7 +83,7 @@ namespace Aspnetcore.CityInfo.Api
             app.UseMvc();
 
 //            dbContext.Seed();   // method 1: extend DbContext
-            DbInitializer.Seed(app);   // method 2: write a static class
+            DbInitializer.Seed(app); // method 2: write a static class
         }
     }
 }
