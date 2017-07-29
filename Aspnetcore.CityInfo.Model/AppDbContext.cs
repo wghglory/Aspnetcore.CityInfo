@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Aspnetcore.CityInfo.Model.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace Aspnetcore.CityInfo.Api.Entities
+namespace Aspnetcore.CityInfo.Model
 {
     public sealed class AppDbContext : DbContext
     {
@@ -13,11 +14,10 @@ namespace Aspnetcore.CityInfo.Api.Entities
         public DbSet<City> Cities { get; set; }
         public DbSet<PointOfInterest> PointsOfInterest { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("connectionstring");
-
-        //    base.OnConfiguring(optionsBuilder);
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+//            optionsBuilder.UseMySql("MysqlConnection");
+//            base.OnConfiguring(optionsBuilder);
+        }
     }
 }

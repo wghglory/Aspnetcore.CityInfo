@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Aspnetcore.CityInfo.Api.Migrations
+namespace Aspnetcore.CityInfo.Model.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

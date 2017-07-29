@@ -1,4 +1,4 @@
-﻿using Aspnetcore.CityInfo.Api.Services;
+﻿using Aspnetcore.CityInfo.Model.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aspnetcore.CityInfo.Api.Controllers

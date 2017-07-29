@@ -1,4 +1,4 @@
-﻿namespace Aspnetcore.CityInfo.Api.Services
+﻿namespace Aspnetcore.CityInfo.Model.Services
 {
     public interface IMailService
     {

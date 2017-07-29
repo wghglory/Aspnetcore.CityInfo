@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Aspnetcore.CityInfo.Api.Entities;
+using Aspnetcore.CityInfo.Model.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Aspnetcore.CityInfo.Api
+namespace Aspnetcore.CityInfo.Model
 {
     public static class DbInitializer
     {

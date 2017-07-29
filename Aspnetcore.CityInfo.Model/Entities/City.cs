@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Aspnetcore.CityInfo.Api.Entities
+namespace Aspnetcore.CityInfo.Model.Entities
 {
     public class City
     {

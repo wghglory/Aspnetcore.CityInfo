@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Aspnetcore.CityInfo.Api.Entities;
 
 namespace Aspnetcore.CityInfo.Api.ViewModels
 {

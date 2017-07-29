@@ -3,20 +3,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Aspnetcore.CityInfo.Api.Entities;
+using Aspnetcore.CityInfo.Model;
 
-namespace Aspnetcore.CityInfo.Api.Migrations
+namespace Aspnetcore.CityInfo.Model.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20170723123821_Initial")]
-    partial class Initial
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
 
-            modelBuilder.Entity("Aspnetcore.CityInfo.Api.Entities.City", b =>
+            modelBuilder.Entity("Aspnetcore.CityInfo.Model.Entities.City", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -33,7 +32,7 @@ namespace Aspnetcore.CityInfo.Api.Migrations
                     b.ToTable("Cities");
                 });
 
-            modelBuilder.Entity("Aspnetcore.CityInfo.Api.Entities.PointOfInterest", b =>
+            modelBuilder.Entity("Aspnetcore.CityInfo.Model.Entities.PointOfInterest", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -54,9 +53,9 @@ namespace Aspnetcore.CityInfo.Api.Migrations
                     b.ToTable("PointsOfInterest");
                 });
 
-            modelBuilder.Entity("Aspnetcore.CityInfo.Api.Entities.PointOfInterest", b =>
+            modelBuilder.Entity("Aspnetcore.CityInfo.Model.Entities.PointOfInterest", b =>
                 {
-                    b.HasOne("Aspnetcore.CityInfo.Api.Entities.City", "City")
+                    b.HasOne("Aspnetcore.CityInfo.Model.Entities.City", "City")
                         .WithMany("PointsOfInterest")
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade);

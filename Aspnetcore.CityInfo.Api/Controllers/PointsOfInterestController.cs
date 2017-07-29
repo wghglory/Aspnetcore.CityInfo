@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Aspnetcore.CityInfo.Api.Entities;
-using Aspnetcore.CityInfo.Api.Services;
 using Aspnetcore.CityInfo.Api.ViewModels;
+using Aspnetcore.CityInfo.Model.Entities;
+using Aspnetcore.CityInfo.Model.Services;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

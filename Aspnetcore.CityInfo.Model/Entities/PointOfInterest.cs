@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Aspnetcore.CityInfo.Api.Entities
+namespace Aspnetcore.CityInfo.Model.Entities
 {
     public class PointOfInterest
     {

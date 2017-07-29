@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Aspnetcore.CityInfo.Api.Entities;
+﻿using System.Linq;
+using Aspnetcore.CityInfo.Model.Entities;
 
-namespace Aspnetcore.CityInfo.Api.Services
+namespace Aspnetcore.CityInfo.Model.Services
 {
     public interface ICityInfoRepository
     {

@@ -1,8 +1,10 @@
-﻿using Aspnetcore.CityInfo.Api.Entities;
-using Aspnetcore.CityInfo.Api.Services;
+﻿using Aspnetcore.CityInfo.Model;
+using Aspnetcore.CityInfo.Model.Entities;
+using Aspnetcore.CityInfo.Model.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -51,8 +53,8 @@ namespace Aspnetcore.CityInfo.Api
                 return new CloudMailService(mailFrom, mailTo);
             });
 #endif
-            services.AddDbContext<AppDbContext>(
-                o => o.UseMySql(Configuration.GetConnectionString("MysqlConnection")));
+            
+            services.AddDbContext<AppDbContext>(o => o.UseMySql(Configuration.GetConnectionString("MysqlConnection")));
 
             services.AddScoped<ICityInfoRepository, CityInfoRepository>();
         }
@@ -82,8 +84,8 @@ namespace Aspnetcore.CityInfo.Api
 
             app.UseMvc();
 
-//            dbContext.Seed();   // method 1: extend DbContext
-            DbInitializer.Seed(app); // method 2: write a static class
+            dbContext.Seed();   // method 1: extend DbContext
+//            DbInitializer.Seed(app); // method 2: write a static class
         }
     }
 }

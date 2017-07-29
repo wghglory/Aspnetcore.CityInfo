@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
+using Aspnetcore.CityInfo.Model.Entities;
 using System.Linq;
-using Aspnetcore.CityInfo.Api.Entities;
 
-namespace Aspnetcore.CityInfo.Api.Entities
+namespace Aspnetcore.CityInfo.Model
 {
     public static class AppDbContextExtensions
     {

@@ -1,21 +1,22 @@
 ﻿using System.Diagnostics;
 
-namespace Aspnetcore.CityInfo.Api.Services
+namespace Aspnetcore.CityInfo.Model.Services
 {
-    public class CloudMailService : IMailService
+    public class LocalMailService : IMailService
     {
         private readonly string _mailTo;
         private readonly string _mailFrom;
 
-        public CloudMailService(string mailFrom, string mailTo)
+        public LocalMailService(string mailFrom, string mailTo)
         {
             _mailFrom = mailFrom;
             _mailTo = mailTo;
         }
+
         public void Send(string subject, string message)
         {
             // send mail - output to debug window
-            Debug.WriteLine($"Mail from {_mailFrom} to {_mailTo}, with CloudMailService.");
+            Debug.WriteLine($"Mail from {_mailFrom} to {_mailTo}, with LocalMailService.");
             Debug.WriteLine($"Subject: {subject}");
             Debug.WriteLine($"Message: {message}");
         }
